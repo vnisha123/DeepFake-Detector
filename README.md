@@ -23,7 +23,7 @@ Streamlit Interface is built for users to upload images and see the prediction.
 - Resized the images into 128 x 128.
 
 ## Model: 
-- Covolutional Neural Network is built to classify the images.
+- Convolutional Neural Network (CNN) is built to classify the images.
 - This model is trained on 7000 images.
 - Used Batch Normalization
 - Used Dropout to prevent overfitting.
