@@ -1,26 +1,38 @@
-# DeepFake-Detector
+# DeepFake Image Dectector
 
-This project detects whether an image is real or fake (deepfake) using a Convolutional Neural Network (CNN) model. It includes a simple user interface made with Streamlit where users can upload an image and see the prediction.
+The DeepFake Image Detector classifies images as real or fake. 
+Streamlit Interface is built for users to upload images and see the prediction.
 
-- Deepfake image classification using CNN
-- Streamlit web app for testing images
-- Model trained on a dataset of 7000 images resized to 128x128
-- Predicts in real-time if an image is "Real" or "Fake"
+##Dataset:
+- Dataset is taken from kaggle : https://www.kaggle.com/datasets/sachchitkunichetty/rvf10k
+- This Dataset contains total 10000 images divided into train and valid directories.
+- The train directory contains 7000 images further divided into fake and real containg 3500 images each.
+- The test directory contains 3000 images further divided into fake and real containing 1500 images each.
 
-### 🛠️ What I Did
-- **Preprocessing**: Read images, checked sizes, counted them using custom functions and `collections.Counter`.
-- **Color Conversion**: Converted BGR to RGB for compatibility with CNNs.
-- **Labeling**: Assigned labels manually.
-- **Normalization**: For better computation.
-- **Shuffling**: Used `zip()` to shuffle images + labels without losing alignment.
-- **Resizing**: Resized images to 128×128 because converting full sets to NumPy crashed Kaggle kernels.
-- **Modeling**: Trained a CNN (achieved ~76% accuracy).
-- **Tried Alternatives**: MobileNet, ResNet (performed worse).
-- **Tuning**: Added more CNN layers. Set random seed to get consistent results.
+##Libraries used:
+- Numpy
+- Opencv
+- Matplotlib
+- os
 
----
+##Preprocessing:
+- Created a function Color conversion to convert images from BGR to RGB.
+- Used Normalisation to the images to standardize the data.
+- Created labels for the training and testing images manually.
+- Shuffled the data for better training.
+- Resized the images into 128 x 128.
 
-### 🐛 Challenges I Faced
-- Kernel crashing on NumPy conversion → fixed by resizing images.
-- Path variable in quotes caused string iteration → fixed using `os.listdir()`.
-- TensorFlow version mismatch with Python (v3.12.0 not supported by TF 2.19) → created virtual environment with Python 3.11.6 → realized Kaggle used TF 2.18, finally installed matching version.
+##Model: 
+- Covolutional Neural Network is built to classify the images.
+- This model is trained on 7000 images.
+- Used Batch Normalization
+- Used Dropout to prevent overfitting.
+
+##Evaluation:
+- Accuracy: Achieved accuracy approximately between 81% - 83%.
+- Confusion matrix
+
+##Interface:
+- Built a streamlit interface.
+- Enables uploading of images.
+- Predicts whether the image is real or fake.
