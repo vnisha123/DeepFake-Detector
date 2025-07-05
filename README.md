@@ -5,9 +5,9 @@ Streamlit Interface is built for users to upload images and see the prediction.
 
 ## Dataset:
 - Dataset is taken from kaggle : https://www.kaggle.com/datasets/sachchitkunichetty/rvf10k
-- This Dataset contains total 10000 images divided into train and valid directories.
-- The train directory contains 7000 images further divided into fake and real containg 3500 images each.
-- The test directory contains 3000 images further divided into fake and real containing 1500 images each.
+- This Dataset contains total 10000 images divided into ``train`` and ``valid`` directories.
+- The ``train`` directory contains 7000 images further divided into ``fake`` and ``real`` containg 3500 images each.
+- The ``valid`` directory contains 3000 images further divided into ``fake`` and ``real`` containing 1500 images each.
 
 ## Libraries used:
 - Numpy
